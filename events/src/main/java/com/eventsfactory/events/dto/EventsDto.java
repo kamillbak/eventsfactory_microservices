@@ -11,18 +11,18 @@ public class EventsDto {
     @NotEmpty(message = "Event Name can not be a null or empty")
     private String eventName;
 
-    @NotEmpty(message = "Event Name can not be a null or empty")
+    @NotEmpty(message = "Event Description can not be a null or empty")
     private String eventDescription;
 
-    @NotEmpty(message = "Event Name can not be a null or empty")
+    @NotEmpty(message = "Start date time can not be a null or empty")
     private LocalDateTime startDatetime;
 
-    @NotEmpty(message = "Event Name can not be a null or empty")
+    @NotEmpty(message = "End date time can not be a null or empty")
     private LocalDateTime endDatetime;
 
-    @NotEmpty(message = "Event Name can not be a null or empty")
+    @NotEmpty(message = "Organizer id can not be a null or empty")
     private Long organizerId;
 
-    @NotEmpty(message = "Event Name can not be a null or empty")
+    @NotEmpty(message = "Location Id can not be a null or empty")
     private Long locationId;
 }

@@ -4,23 +4,23 @@ import com.eventsfactory.events.dto.EventsDto;
 import com.eventsfactory.events.entity.Events;
 
 public class EventsMapper {
-    public static EventsDto mapToEventsDto(Events events, EventsDto eventsDto) {
-        eventsDto.setEventName(events.getEventName());
-        eventsDto.setEventDescription(events.getEventDescription());
-        eventsDto.setStartDatetime(events.getStartDatetime());
-        eventsDto.setEndDatetime(events.getEndDatetime());
-        eventsDto.setOrganizerId(events.getOrganizerId());
-        eventsDto.setLocationId(events.getLocationId());
-        return eventsDto;
+    public static EventsDto mapToEventDto(Events event, EventsDto eventDto) {
+        eventDto.setEventName(event.getEventName());
+        eventDto.setEventDescription(event.getEventDescription());
+        eventDto.setStartDatetime(event.getStartDatetime());
+        eventDto.setEndDatetime(event.getEndDatetime());
+        eventDto.setOrganizerId(event.getOrganizerId());
+        eventDto.setLocationId(event.getLocationId());
+        return eventDto;
     }
 
-    public static Events mapToEvents(EventsDto eventsDto, Events events) {
-        events.setEventName(eventsDto.getEventName());
-        events.setEventDescription(eventsDto.getEventDescription());
-        events.setStartDatetime(eventsDto.getStartDatetime());
-        events.setEndDatetime(eventsDto.getEndDatetime());
-        events.setOrganizerId(eventsDto.getOrganizerId());
-        events.setLocationId(eventsDto.getLocationId());
-        return events;
+    public static Events mapToEvent(EventsDto eventDto, Events event) {
+        event.setEventName(eventDto.getEventName());
+        event.setEventDescription(eventDto.getEventDescription());
+        event.setStartDatetime(eventDto.getStartDatetime());
+        event.setEndDatetime(eventDto.getEndDatetime());
+        event.setOrganizerId(eventDto.getOrganizerId());
+        event.setLocationId(eventDto.getLocationId());
+        return event;
     }
 }
