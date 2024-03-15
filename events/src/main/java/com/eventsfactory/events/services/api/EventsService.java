@@ -4,11 +4,10 @@ import com.eventsfactory.events.dto.EventsDto;
 
 public interface EventsService {
     /**
-     * @param organizerId - id of organizer
-     * @param LocationId - id of location
-     * other data are mocked for now
+     *
+     * @param eventsDto - events data
      */
-    void createEvent(String name, Long organizerId, Long LocationId);
+    void createEvent(EventsDto eventsDto);
 
     /**
      *

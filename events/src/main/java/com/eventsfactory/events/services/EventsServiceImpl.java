@@ -8,7 +8,6 @@ import com.eventsfactory.events.services.api.EventsService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.Random;
 
 @Service
@@ -18,22 +17,10 @@ public class EventsServiceImpl implements EventsService {
     private EventsRepository eventsRepository;
 
     @Override
-    public void createEvent(String name, Long organizerId, Long LocationId) {
-        Events event = mockOtherData(name, organizerId, LocationId);
+    public void createEvent(EventsDto eventsDto) {
+        Events event = EventsMapper.mapToEvent(eventsDto, new Events());
+        event.setEventId(new Random().nextLong());
         eventsRepository.save(event);
-    }
-
-    private Events mockOtherData(String name, Long organizerId, Long LocationId) {
-        Events event = new Events();
-        long randomId = new Random().nextLong();
-        event.setEventId(randomId);
-        event.setEventName(name);
-        event.setEventDescription("Best event ever");
-        event.setStartDatetime(LocalDateTime.now());
-        event.setEndDatetime(LocalDateTime.now().plusHours(5));
-        event.setOrganizerId(organizerId);
-        event.setLocationId(LocationId);
-        return event;
     }
 
     @Override
