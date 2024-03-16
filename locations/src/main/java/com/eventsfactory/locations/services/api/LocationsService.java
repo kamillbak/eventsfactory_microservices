@@ -10,7 +10,6 @@ public interface LocationsService {
 
     boolean updateLocation(Long locationId, LocationsDto locationDto);
 
-
     boolean deleteLocation(Long locationId);
 
 }
