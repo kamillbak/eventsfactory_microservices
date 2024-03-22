@@ -1,0 +1,10 @@
+build:
+  version: "1.1"
+
+users:
+  message: "Welcome in EventsFactory users related API"
+  contactDetails:
+    name: "Jan Kowalski"
+    email: "jan@kowalski.com"
+  onCallSupper:
+    - (+48) 111 222 333
