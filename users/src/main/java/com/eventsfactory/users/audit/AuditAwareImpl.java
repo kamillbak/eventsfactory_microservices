@@ -1,4 +1,4 @@
-package com.eventsfactory.locations.audit;
+package com.eventsfactory.users.audit;
 
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.Optional;
 
 @Component("auditAwareImpl")
+@EnableJpaAuditing(auditorAwareRef = "auditAwareImpl")
 public class AuditAwareImpl implements AuditorAware<String> {
 
     /**
@@ -16,6 +17,6 @@ public class AuditAwareImpl implements AuditorAware<String> {
      */
     @Override
     public Optional<String> getCurrentAuditor() {
-        return Optional.of("LOCATIONS_MS");
+        return Optional.of("USERS_MS");
     }
 }
