@@ -1,10 +1,13 @@
 package com.eventsfactory.locations.controller;
 
 import com.eventsfactory.locations.constants.LocationsConstants;
+import com.eventsfactory.locations.dto.LocationsContactInfoDto;
 import com.eventsfactory.locations.dto.LocationsDto;
 import com.eventsfactory.locations.dto.ResponseDto;
 import com.eventsfactory.locations.services.api.LocationsService;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -13,11 +16,23 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "eventsfactory/api/locations", produces = {MediaType.APPLICATION_JSON_VALUE})
-@AllArgsConstructor
 @Validated
 public class LocationsController {
-    private LocationsService locationsService;
 
+    private final LocationsService locationsService;
+
+    private final Environment environment;
+
+    private final LocationsContactInfoDto locationsContactInfoDto;
+
+    public LocationsController(LocationsService locationsService, Environment environment, LocationsContactInfoDto locationsContactInfoDto) {
+        this.locationsService = locationsService;
+        this.environment = environment;
+        this.locationsContactInfoDto = locationsContactInfoDto;
+    }
+
+    @Value("${build.version}")
+    private String buildVersion;
 
     @PostMapping("/create")
     public ResponseEntity<ResponseDto> createLocation(@RequestBody LocationsDto locationDto) {
@@ -64,5 +79,25 @@ public class LocationsController {
         }
     }
 
+    @GetMapping("/build-info")
+    public ResponseEntity<String> getBuildInfo() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(buildVersion);
+    }
+
+    @GetMapping("/java-version")
+    public ResponseEntity<String> getJavaVersion() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(environment.getProperty("JAVA_HOME"));
+    }
+
+    @GetMapping("/contact-info")
+    public ResponseEntity<LocationsContactInfoDto> getContactInfo() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(locationsContactInfoDto);
+    }
 
 }
