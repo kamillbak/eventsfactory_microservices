@@ -1,0 +1,10 @@
+build:
+  version: "1.0"
+
+locations:
+  message: "Welcome in EventsFactory locations related prod API"
+  contactDetails:
+    name: "Kamil Kowalski"
+    email: "kamil@kowalski.com"
+  onCallSupport:
+    - (+48) 222 111 333

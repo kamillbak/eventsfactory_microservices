@@ -1,0 +1,10 @@
+build:
+  version: "1.1"
+
+locations:
+  message: "Welcome in EventsFactory locations related API"
+  contactDetails:
+    name: "Jan Kowalski"
+    email: "jan@kowalski.com"
+  onCallSupport:
+    - (+48) 111 222 333

@@ -1,0 +1,10 @@
+build:
+  version: "1.0"
+
+users:
+  message: "Welcome in EventsFactory users related prod API"
+  contactDetails:
+    name: "Kamil Kowalski"
+    email: "kamil@kowalski.com"
+  onCallSupport:
+    - (+48) 222 111 333

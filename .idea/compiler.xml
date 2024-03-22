@@ -2,16 +2,19 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="locations" />
+        <module name="configserver" />
         <module name="users" />
         <module name="events" />
-        <module name="locations" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="configserver" target="17" />
       <module name="events" target="17" />
       <module name="locations" target="17" />
       <module name="users" target="17" />
@@ -19,6 +22,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="configserver" options="-parameters" />
       <module name="events" options="-parameters" />
       <module name="locations" options="-parameters" />
       <module name="users" options="-parameters" />
