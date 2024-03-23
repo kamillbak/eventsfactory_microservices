@@ -16,7 +16,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="configserver" target="17" />
-      <module name="eurekaserver" target="1.5" />
+      <module name="eurekaserver" target="17" />
       <module name="events" target="17" />
       <module name="locations" target="17" />
       <module name="users" target="17" />
@@ -25,6 +25,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="configserver" options="-parameters" />
+      <module name="eurekaserver" options="-parameters" />
       <module name="events" options="-parameters" />
       <module name="locations" options="-parameters" />
       <module name="users" options="-parameters" />
