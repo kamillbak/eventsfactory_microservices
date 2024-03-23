@@ -2,6 +2,8 @@ package com.eventsfactory.events.services.api;
 
 import com.eventsfactory.events.dto.EventsDto;
 
+import java.util.List;
+
 public interface EventsService {
     /**
      *
@@ -15,6 +17,13 @@ public interface EventsService {
      * @return event dto
      */
     EventsDto getEvent(Long eventId);
+
+    /**
+     *
+     * @param userId - organizer id
+     * @return List of event
+     */
+    List<EventsDto> getEventsOrganizedByUser(Long userId);
 
     /**
      *

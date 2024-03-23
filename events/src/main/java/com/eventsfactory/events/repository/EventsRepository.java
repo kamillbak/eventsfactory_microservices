@@ -14,4 +14,6 @@ public interface EventsRepository extends JpaRepository<Events, Long> {
     List<Events> findEventsByOrganizerIdAndLocationIdAndStartDatetime(@Param("organizerId") Long organizerId,
                                                                       @Param("locationId") Long locationId,
                                                                       @Param("startDatetime") LocalDateTime startDatetime);
+
+    List<Events> findEventsByOrganizerId(Long organizerId);
 }
