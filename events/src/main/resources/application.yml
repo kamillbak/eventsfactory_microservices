@@ -49,5 +49,5 @@ eureka:
 info:
   app:
     name: "events"
-    description: "EventsFactory App"
+    description: "EventsFactory events App"
     version: "1.0.0"
