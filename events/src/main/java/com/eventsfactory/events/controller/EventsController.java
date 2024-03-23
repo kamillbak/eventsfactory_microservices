@@ -13,6 +13,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(path = "eventsfactory/api/events", produces = {MediaType.APPLICATION_JSON_VALUE})
 @Validated
@@ -45,6 +47,12 @@ public class EventsController {
     public ResponseEntity<EventsDto> getEvent(@RequestParam Long eventId) {
        EventsDto eventsDto = eventsService.getEvent(eventId);
        return ResponseEntity.status(HttpStatus.OK).body(eventsDto);
+    }
+
+    @GetMapping("/get/organizedBy")
+    public ResponseEntity<List<EventsDto>> getEventsOrganizedByUser(@RequestParam Long userId) {
+        List<EventsDto> eventsDtoList= eventsService.getEventsOrganizedByUser(userId);
+        return ResponseEntity.status(HttpStatus.OK).body(eventsDtoList);
     }
 
     @PutMapping("/update")
