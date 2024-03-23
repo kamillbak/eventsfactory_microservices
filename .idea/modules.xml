@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/configserver/configserver.iml" filepath="$PROJECT_DIR$/configserver/configserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eurekaserver/eurekaserver.iml" filepath="$PROJECT_DIR$/eurekaserver/eurekaserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/events/events.iml" filepath="$PROJECT_DIR$/events/events.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/eventsfactory.iml" filepath="$PROJECT_DIR$/.idea/eventsfactory.iml" />
       <module fileurl="file://$PROJECT_DIR$/locations/locations.iml" filepath="$PROJECT_DIR$/locations/locations.iml" />
