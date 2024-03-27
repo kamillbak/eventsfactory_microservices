@@ -26,7 +26,9 @@ public class GatewayserverApplication {
 		return routeLocatorBuilder.routes()
 				.route(p -> p
 						.path("/events/**")
-						.filters(f -> f.rewritePath("/events/(?<segment>.*)", "/${segment}"))
+						.filters(f -> f.rewritePath("/events/(?<segment>.*)", "/${segment}")
+								.circuitBreaker(config -> config.setName("eventsCircuitBreaker")
+								.setFallbackUri("forward:/contactSupport")))
 						.uri("lb://EVENTS"))
 				.route(p -> p
 						.path("/locations/**")
