@@ -9,7 +9,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 10
-      start_period: 10s
+      start_period: 40s
     extends:
       file: common-config.yml
       service: microservice-base-config
@@ -27,7 +27,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 10
-      start_period: 10s
+      start_period: 60s
     extends:
       file: common-config.yml
       service: microservice-configserver-config
@@ -49,7 +49,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 10
-      start_period: 10s
+      start_period: 120s
     environment:
       SPRING_APPLICATION_NAME: "users"
     extends:
@@ -71,7 +71,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 10
-      start_period: 10s
+      start_period: 120s
     environment:
       SPRING_APPLICATION_NAME: "locations"
     extends:
@@ -93,7 +93,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 10
-      start_period: 10s
+      start_period: 120s
     environment:
       SPRING_APPLICATION_NAME: "events"
     extends:
